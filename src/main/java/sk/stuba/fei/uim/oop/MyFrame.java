@@ -146,6 +146,7 @@ public class MyFrame extends JFrame{
                     figArray.get(currentFindex-1).setEnd_coord_y(figArray.get(currentFindex-1).getStart_coord_y());
                     figArray.get(currentFindex-1).setVisibility(true);
                     mode = 1;
+                    labelState(mode);
                     frame.repaint();
                 }
                 if(mode == 2){
@@ -191,22 +192,6 @@ public class MyFrame extends JFrame{
                         figArray.get(figtomove).setStart_coord_x(figArray.get(figtomove).getEnd_coord_x()-(e.getX() - figArray.get(figtomove).getEnd_coord_x()));
                         figArray.get(figtomove).setStart_coord_y(figArray.get(figtomove).getEnd_coord_y()-(e.getY() - figArray.get(figtomove).getEnd_coord_y()));
 
-                        if(e.getX() - figArray.get(figtomove).getEnd_coord_x() > 0 && figArray.get(figtomove).getTop_size_x() >= 2){
-                            figArray.get(figtomove).setTop_size_x(figArray.get(figtomove).getTop_size_x()-1);
-                            figArray.get(figtomove).setTop_size_y(figArray.get(figtomove).getTop_size_x()*2/3);
-                        }
-                        else if(e.getX() - figArray.get(figtomove).getEnd_coord_x() <= 0){
-                            figArray.get(figtomove).setTop_size_x(figArray.get(figtomove).getTop_size_x()+1);
-                            figArray.get(figtomove).setTop_size_y(figArray.get(figtomove).getTop_size_x()*2/3);
-                        }
-                        if(e.getY() - figArray.get(figtomove).getEnd_coord_y() > 0 && figArray.get(figtomove).getTop_size_y() >= 2){
-                            figArray.get(figtomove).setTop_size_y(figArray.get(figtomove).getTop_size_y()-1);
-                            figArray.get(figtomove).setTop_size_x(figArray.get(figtomove).getTop_size_y()*3/2);
-                        }
-                        else if(e.getY() - figArray.get(figtomove).getEnd_coord_y() <= 0){
-                            figArray.get(figtomove).setTop_size_y(figArray.get(figtomove).getTop_size_y()+1);
-                            figArray.get(figtomove).setTop_size_x(figArray.get(figtomove).getTop_size_y()*3/2);
-                        }
                         dragging = true;
                     }
                     if(figtomove == -1){
