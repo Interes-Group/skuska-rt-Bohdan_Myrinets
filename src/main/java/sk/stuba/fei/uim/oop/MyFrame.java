@@ -189,8 +189,8 @@ public class MyFrame extends JFrame{
                 }
                 else if(mode == 2){
                     if(currentFindex>0 && figtomove != -1){
-                        figArray.get(figtomove).setStart_coord_x(figArray.get(figtomove).getEnd_coord_x()-(e.getX() - figArray.get(figtomove).getEnd_coord_x()));
-                        figArray.get(figtomove).setStart_coord_y(figArray.get(figtomove).getEnd_coord_y()-(e.getY() - figArray.get(figtomove).getEnd_coord_y()));
+                        figArray.get(figtomove).setStart_coord_x(figArray.get(figtomove).getEnd_coord_x()+(e.getX() - figArray.get(figtomove).getEnd_coord_x()));
+                        figArray.get(figtomove).setStart_coord_y(figArray.get(figtomove).getEnd_coord_y()+(e.getY() - figArray.get(figtomove).getEnd_coord_y()));
 
                         dragging = true;
                     }
